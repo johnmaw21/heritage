@@ -1,10 +1,13 @@
 package com.heritage;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.heritage.base.DriverManager;
 import com.heritage.pages.HomePage;
@@ -18,9 +21,15 @@ public class HomeTest {
 	final public String heritage_username = System.getenv("HERITAGE_USER");
 	final public String heritage_password = System.getenv("HERITAGE_PASSWORD");
 	
-	@BeforeClass
-	public static void setUpClass() throws Exception {
-		driver = DriverManager.get();
+//	@BeforeClass
+//	public static void setUpClass() throws Exception {
+//		driver = DriverManager.get();
+//	}
+	
+	@Before
+	public void setUpDriver()  {
+		System.setProperty("webdriver.gecko.driver", "C:/webdrivers/geckodriver/geckodriver.exe");
+		driver = new FirefoxDriver();
 	}
 	
 	@Test
@@ -55,9 +64,14 @@ public class HomeTest {
 		Assert.assertEquals(homePage.getHomeMenuItemText("Research_Advice"), researchAdviceText);
 	}
 	
-	@AfterClass
-	public static void methodTearDown() {
-		DriverManager.quit();
+	@After
+	public void tearDownDriver() {
+		driver.quit();
 	}
+	
+//@AfterClass
+//public static void methodTearDown() {
+//	DriverManager.quit();
+//}
+	
 }
-
