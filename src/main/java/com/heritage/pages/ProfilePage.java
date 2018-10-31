@@ -2,6 +2,8 @@ package com.heritage.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import static org.openqa.selenium.support.ui.ExpectedConditions.titleContains;
 
 import com.heritage.base.BasePageObject;
 
@@ -37,5 +39,8 @@ public class ProfilePage extends BasePageObject<ProfilePage> {
 		click(homePageButton);
 		return new HomePage(driver);
 	}
-
+	public void waitForProfilePageTitle() {
+		wait.until(titleContains("Profile"));
+	}
+	
 }

@@ -45,7 +45,8 @@ public class LogInTest {
 
 		// Enter Valid Login Details and wait for profile page to load
 		ProfilePage profilePage = logInPage.enterValidLoginDetails(heritage_username, heritage_password);
-		profilePage.waitForProfilePageToLoad();
+//		profilePage.waitForProfilePageToLoad();
+		profilePage.waitForProfilePageTitle();
 
 		// Verifications
 		assertTrue("Profile Page Title not as expected", profilePage.getTitle().contains(expectedPageTitle));
@@ -90,10 +91,10 @@ public class LogInTest {
 		logInPage.clearLoginFields();
 	}
 
-//		@After
-//		public void tearDownDriver() {
-//			driver.quit();
-//		}
+		@After
+		public void tearDownDriver() {
+			driver.quit();
+		}
 		
 //	@AfterClass
 //	public static void methodTearDown() {

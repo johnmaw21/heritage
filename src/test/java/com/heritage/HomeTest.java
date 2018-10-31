@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.heritage.base.DriverManager;
 import com.heritage.pages.HomePage;
@@ -45,8 +46,9 @@ public class HomeTest {
 		logInPage.openLogInPage();
 
 		ProfilePage profilePage = logInPage.enterValidLoginDetails(heritage_username, heritage_password);
-		profilePage.waitForProfilePageToLoad();
-	
+//		profilePage.waitForProfilePageToLoad();
+		profilePage.waitForProfilePageTitle();
+		
 		// Navigate to Bishopsteignton Home Page
 		HomePage homePage = profilePage.navigateToHomePage();
 		homePage.waitForHomePageToLoad();
@@ -64,10 +66,10 @@ public class HomeTest {
 		Assert.assertEquals(homePage.getHomeMenuItemText("Research_Advice"), researchAdviceText);
 	}
 	
-//	@After
-//	public void tearDownDriver() {
-//		driver.quit();
-//	}
+	@After
+	public void tearDownDriver() {
+		driver.quit();
+	}
 	
 //@AfterClass
 //public static void methodTearDown() {
