@@ -45,9 +45,11 @@ public class HomeTest {
 		// Log into Bishopsteignton Heritage website and wiat for Profile Page to Load
 		logInPage.openLogInPage();
 
+		String heritage_username = System.getenv("HERITAGE_USER");
+		String heritage_password = System.getenv("HERITAGE_PASSWORD");
 		ProfilePage profilePage = logInPage.enterValidLoginDetails(heritage_username, heritage_password);
-//		profilePage.waitForProfilePageToLoad();
-		profilePage.waitForProfilePageTitle();
+		profilePage.waitForProfilePageToLoad();
+
 		
 		// Navigate to Bishopsteignton Home Page
 		HomePage homePage = profilePage.navigateToHomePage();
