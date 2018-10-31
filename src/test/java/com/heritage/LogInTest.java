@@ -90,10 +90,10 @@ public class LogInTest {
 		logInPage.clearLoginFields();
 	}
 
-		@After
-		public void tearDownDriver() {
-			driver.quit();
-		}
+//		@After
+//		public void tearDownDriver() {
+//			driver.quit();
+//		}
 		
 //	@AfterClass
 //	public static void methodTearDown() {

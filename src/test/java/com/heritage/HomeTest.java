@@ -64,10 +64,10 @@ public class HomeTest {
 		Assert.assertEquals(homePage.getHomeMenuItemText("Research_Advice"), researchAdviceText);
 	}
 	
-	@After
-	public void tearDownDriver() {
-		driver.quit();
-	}
+//	@After
+//	public void tearDownDriver() {
+//		driver.quit();
+//	}
 	
 //@AfterClass
 //public static void methodTearDown() {
