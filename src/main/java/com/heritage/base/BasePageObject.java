@@ -31,7 +31,7 @@ public class BasePageObject<T> {
 	
 	@SuppressWarnings("unchecked")
 	protected T getPage(String url) {
-		DriverManager.get(url);
+		driver.get(url);
 		return (T) this;
 	}
 	
