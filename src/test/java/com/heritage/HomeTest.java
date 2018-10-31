@@ -19,8 +19,8 @@ import com.heritage.pages.ProfilePage;
 public class HomeTest {
 
 	public static WebDriver driver;
-	final public String heritage_username = System.getenv("HERITAGE_USER");
-	final public String heritage_password = System.getenv("HERITAGE_PASSWORD");
+	final public String heritage_username = System.getenv("heritage.user");
+	final public String heritage_password = System.getenv("heritage.password");
 	
 //	@BeforeClass
 //	public static void setUpClass() throws Exception {
@@ -45,8 +45,6 @@ public class HomeTest {
 		// Log into Bishopsteignton Heritage website and wiat for Profile Page to Load
 		logInPage.openLogInPage();
 
-		String heritage_username = System.getenv("HERITAGE_USER");
-		String heritage_password = System.getenv("HERITAGE_PASSWORD");
 		ProfilePage profilePage = logInPage.enterValidLoginDetails(heritage_username, heritage_password);
 		profilePage.waitForProfilePageToLoad();
 
