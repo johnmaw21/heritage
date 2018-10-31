@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.heritage.base.DriverManager;
+import com.heritage.base.EnvironmentPropertyReader;
 import com.heritage.pages.HomePage;
 import com.heritage.pages.LogInPage;
 import com.heritage.pages.ProfilePage;
@@ -19,8 +20,8 @@ import com.heritage.pages.ProfilePage;
 public class HomeTest {
 
 	public static WebDriver driver;
-	final public String heritage_username = System.getProperty("heritage.user");
-	final public String heritage_password = System.getProperty("heritage.password");
+	final public String heritage_username = EnvironmentPropertyReader.getPropertyOrEnv("heritage.user", "Default");
+	final public String heritage_password = EnvironmentPropertyReader.getPropertyOrEnv("heritage.password", "Default");
 	
 //	@BeforeClass
 //	public static void setUpClass() throws Exception {

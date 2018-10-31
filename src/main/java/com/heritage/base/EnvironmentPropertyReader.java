@@ -15,10 +15,10 @@ public class EnvironmentPropertyReader {
                 System.out.println("No Environment Variable or Property named [" + name + "] using default value [" + theDefault + "]");
                 theValue = theDefault;
             }else{
-                System.out.println("Using Environment Variable " + name + " with value " + theValue);
+                System.out.println("Using Environment Variable " + name);
             }
         }else{
-            System.out.println("Using Property " + name + " with value " + theValue);
+            System.out.println("Using Property " + name);
         }
         return theValue;
     }

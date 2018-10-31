@@ -11,14 +11,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.heritage.base.DriverManager;
+import com.heritage.base.EnvironmentPropertyReader;
 import com.heritage.pages.LogInPage;
 import com.heritage.pages.ProfilePage;
 
 public class LogInTest {
 
 	public static WebDriver driver;
-	final public String heritage_username = System.getProperty("heritage.user");
-	final public String heritage_password = System.getProperty("heritage.password");
+	final public String heritage_username = EnvironmentPropertyReader.getPropertyOrEnv("heritage.user", "Default");
+	final public String heritage_password = EnvironmentPropertyReader.getPropertyOrEnv("heritage.password", "Default");
 	
 //	@BeforeClass
 //	public static void setUpClass() throws Exception {
